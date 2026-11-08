@@ -13,7 +13,8 @@ try {
   New-Item -ItemType Directory -Path $releaseRoot -Force | Out-Null
   & $compiler /nologo /target:winexe /optimize+ /reference:System.Windows.Forms.dll ('/out:' + (Join-Path $releaseRoot '雨夜高架.exe')) 'packaging\Launcher.cs'
   if ($LASTEXITCODE -ne 0) { throw 'Windows launcher compilation failed.' }
-  Copy-Item -LiteralPath 'README.md','ASSET-SOURCES.md','THIRD-PARTY-LICENSES.txt','REFERENCE-TECHNIQUES.md' -Destination $releaseRoot
+  Copy-Item -LiteralPath 'README.md','LICENSE','ASSET-SOURCES.md','THIRD-PARTY-LICENSES.txt','REFERENCE-TECHNIQUES.md' -Destination $releaseRoot
+  Copy-Item -LiteralPath 'docs' -Destination $releaseRoot -Recurse
   Copy-Item -LiteralPath 'dist' -Destination $releaseRoot -Recurse
   foreach ($optional in @('验收报告.md','preview.png','build-info.json')) {
     if (Test-Path -LiteralPath $optional) { Copy-Item -LiteralPath $optional -Destination $releaseRoot }

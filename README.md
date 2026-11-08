@@ -2,7 +2,7 @@
 
 第一人称雨夜驾驶游戏。1.3 加入真实东京建筑立面与几何、外部车辆和灯具、连续弯道与起伏、多层高架；重做玻璃水珠聚合、粘滑、拖尾、气流拉伸与分裂，并增强电驱中段的科幻谐波。
 
-当前为 1.3 开发版，最终长时间验收尚未完成，详见 [开发状态](docs/STATUS.md)。原创代码采用 [MIT](LICENSE)；第三方素材保留其原有许可，详见 [素材来源](ASSET-SOURCES.md)。
+1.3 已通过本机 1080p 高画质 10 分钟连续驾驶验收：平均 48.6 FPS，p95 27.7 ms。详见 [验收状态](docs/STATUS.md)。原创代码采用 [MIT](LICENSE)；第三方素材保留其原有许可，详见 [素材来源](ASSET-SOURCES.md)。
 
 ![雨夜城市驾驶画面](docs/preview.png)
 
@@ -104,3 +104,5 @@ powershell -ExecutionPolicy Bypass -File packaging/build-package.ps1 -Destinatio
 只为此次构建选择进程执行策略，不修改系统持久策略。使用 Windows 自带 .NET Framework C# 编译器制作本机启动器。
 
 验收使用 Playwright、Chrome 和只读状态入口 window.__rainDrive.snapshot()。设置 GAME_URL 指向启动器实际地址，QA_OUTPUT 指向证据文件夹，再运行 npm run verify:functional 或 npm run verify -- --soak --duration=600。源码包含完整测试脚本。没有借用神力科莎或模组的代码、车模、地图和录音。
+
+`node tests/record-demo.mjs` 录制 1080p 游戏 Canvas 和 Web Audio 实时主混音，输出 WebM、分段截图与状态记录；同样使用 GAME_URL / QA_OUTPUT 指定实际运行地址和输出目录。只捕捉本项目画面与声音，不录制其他应用。录制会增加渲染开销，性能验收应单独运行。
