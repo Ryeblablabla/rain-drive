@@ -1,0 +1,66 @@
+[
+  {
+    "uri": "data/data434.b3dm",
+    "width": 148,
+    "depth": 128,
+    "height": 167,
+    "file": "data434.glb",
+    "source": "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/tileset.json"
+  },
+  {
+    "uri": "data/data269.b3dm",
+    "width": 149,
+    "depth": 149,
+    "height": 157,
+    "file": "data269.glb",
+    "source": "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/tileset.json"
+  },
+  {
+    "uri": "data/data425.b3dm",
+    "width": 148,
+    "depth": 146,
+    "height": 110,
+    "file": "data425.glb",
+    "source": "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/tileset.json"
+  },
+  {
+    "uri": "data/data565.b3dm",
+    "width": 148,
+    "depth": 149,
+    "height": 90,
+    "file": "data565.glb",
+    "source": "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/tileset.json"
+  },
+  {
+    "uri": "data/data482.b3dm",
+    "width": 148,
+    "depth": 126,
+    "height": 85,
+    "file": "data482.glb",
+    "source": "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/tileset.json"
+  },
+  {
+    "uri": "data/data589.b3dm",
+    "width": 149,
+    "depth": 126,
+    "height": 85,
+    "file": "data589.glb",
+    "source": "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/tileset.json"
+  },
+  {
+    "uri": "data/data614.b3dm",
+    "width": 148,
+    "depth": 138,
+    "height": 83,
+    "file": "data614.glb",
+    "source": "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/tileset.json"
+  },
+  {
+    "uri": "data/data570.b3dm",
+    "width": 148,
+    "depth": 126,
+    "height": 80,
+    "file": "data570.glb",
+    "source": "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/tileset.json"
+  }
+]
