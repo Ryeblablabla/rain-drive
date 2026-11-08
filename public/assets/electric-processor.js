@@ -13,18 +13,18 @@ class ElectricDrive extends AudioWorkletProcessor {
    const mid=Math.exp(-Math.pow((v-82)/44,4));
    const rise=.5+.5*Math.tanh((v-53)/18);
    const hz=33+v*1.8+load*7+105*rise;
-   this.rotor=(this.rotor+hz/sampleRate)%1;this.dual=(this.dual+(hz*1.006+1.4)/sampleRate)%1;this.bass=(this.bass+(28+v*.19)/sampleRate)%1;
+   this.rotor=(this.rotor+hz/sampleRate)%1;this.dual=(this.dual+(hz*1.002+.35+load*.65)/sampleRate)%1;this.bass=(this.bass+(28+v*.19)/sampleRate)%1;
    const inverter=480+v*2.7+520*rise;
    this.carrierHz+=(inverter-this.carrierHz)*.0002;this.carrier=(this.carrier+this.carrierHz/sampleRate)%1;
    this.seed=(Math.imul(this.seed,1664525)+1013904223)|0;this.air+=(this.seed/2147483648-this.air)*.06;
    const spin=this.rotor*tau,dual=this.dual*tau;
-   const motor=Math.sin(spin)*.29+Math.sin(dual)*.18+Math.sin(spin*2+.35)*(.11+mid*.08)+Math.sin(spin*4)*(.035+mid*.055);
+   const motor=Math.sin(spin)*.29+Math.sin(dual)*.09+Math.sin(spin*2+.35)*(.11+mid*.035)+Math.sin(spin*4)*(.035+mid*.025);
    const body=Math.sin(this.bass*tau)*(.18+load*.12);
-   const pwm=Math.sin(this.carrier*tau+Math.sin(spin*2)*(.45+load*.9+mid*.7))*(.075+mid*.11);
-   const space=mid*load*(Math.sin(dual*3+Math.sin(this.carrier*tau)*.45)*.09+Math.sin(spin*5+.22)*.035);
+   const pwm=Math.sin(this.carrier*tau+Math.sin(spin*2)*(.45+load*.9+mid*.3))*(.05+mid*.045);
+   const space=mid*load*(Math.sin(dual*3+Math.sin(this.carrier*tau)*.25)*.05+Math.sin(spin*5+.22)*.025);
    const braking=Math.sin(spin*2+.6)*regen*.09;
    const envelope=Math.min(1,load*.80+v/(v+32)*.22+regen*.12);
-   out[i]=Math.tanh((motor+body+pwm+space+braking+this.air*load*.025)*1.3)*envelope*.72;
+   out[i]=Math.tanh((motor+body+pwm+space+braking+this.air*load*(.025+mid*.035))*1.3)*envelope*.72;
   }
   return true;
  }

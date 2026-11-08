@@ -10,7 +10,7 @@ const $=<E extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(
 const clamp=T.MathUtils.clamp;
 const settings={rain:.65,wiper:2,quality:'high',volume:.70,rainVolume:.65,engineVolume:.80,musicVolume:.40,voice:true,transmission:'auto',cruiseSpeed:68,traffic:'normal',soundStyle:'electric'};
 try{Object.assign(settings,JSON.parse(localStorage.getItem('after-rain-settings')||'{}'));}catch{}
-if(settings.soundStyle==='traction')settings.soundStyle='electric';
+if(!['electric','combustion'].includes(settings.soundStyle))settings.soundStyle='electric';
 settings.rain=clamp(Number(settings.rain)||0,0,1);settings.wiper=clamp(Number(settings.wiper)||0,0,3);
 let started=false,paused=false,cruise=false,speed=0,playerX=5.4,steer=0,time=0,bump=0,lookX=0,lookY=0,dragging=false,previousX=0,previousY=0,toastTimer=0;
 let driveSeconds=0,activeWallSeconds=0,totalFrames=0,fps=0,performanceTime=0,performanceFrames=0,lastHud=0,navAt=0,lastTime=performance.now(),wasNear=false,collisionCount=0,wasHidden=false;
